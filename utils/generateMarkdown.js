@@ -176,7 +176,7 @@ function generateMarkdown(data) {
   // Render table of contents
   const toc = renderTOC(data.credit);
   // Render license
-  const license = renderLicense(data.license);
+  const license = renderLicense(data.license, data.name);
   // Render questions
   const questions = renderQuestions(data.github, data.email);
 
