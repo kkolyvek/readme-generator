@@ -50,3 +50,7 @@ SOFTWARE.
 ## Questions
 
 For further questions and comments, please reach out through [GitHub](kkolyvek) or [Email](kk674@cornell.edu).
+
+---
+
+Yes, this readme was created using the generator!
