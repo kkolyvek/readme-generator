@@ -49,7 +49,7 @@ SOFTWARE.
 
 ## Questions
 
-For further questions and comments, please reach out through [GitHub](kkolyvek) or [Email](kk674@cornell.edu).
+For further questions and comments, please reach out through [GitHub](https://github.com/kkolyvek) or via email at kk674@cornell.edu.
 
 ---
 

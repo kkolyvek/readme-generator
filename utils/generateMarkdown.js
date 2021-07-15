@@ -166,7 +166,7 @@ const renderQuestions = (github, email) => {
 
 ## Questions
 
-For further questions and comments, please reach out through [GitHub](${github}) or [Email](${email}).`;
+For further questions and comments, please reach out through [GitHub](https://github.com/${github}) or via email at ${email}.`;
 };
 
 // Assemble
