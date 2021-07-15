@@ -1,13 +1,25 @@
 d = new Date();
 
 // Render title and description
-const renderTitle = (title, github, repo) => {
+const renderTitle = (title, github, repo, license) => {
+  let badge = '';
+  if (license === 'Unlicensed') {
+    badge = '![License](https://img.shields.io/badge/License-Unlicensed-blue.svg)';
+  } else if (license === 'MIT License') {
+    badge = '![License](https://img.shields.io/badge/License-MIT-blue.svg)';
+  } else if (license === 'Apache License') {
+    badge = '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)';
+  } else if (license === 'GNU GPL License') {
+    badge = '![License](https://img.shields.io/badge/License-GPL-blue.svg)';
+  };
+
   return `
 <h1 align="center"><strong>${title}</strong></h1>
 
-[languages badge](https://img.shields.io/github/languages/top/${github}/${repo}) [license badge](https://img.shields.io/github/license/${github}/${repo})
+![Language](https://img.shields.io/github/languages/top/${github}/${repo}) ${badge}
 
-## Description`;
+## Description
+`;
 };
 
 // Render table of contents based on whether credit is being given
@@ -26,7 +38,8 @@ const renderTOC = creditBool => {
 
 ## Installation
 
-## Usage`;
+## Usage
+`;
   } else {
     return `
 ## Table of Contents
@@ -40,7 +53,8 @@ const renderTOC = creditBool => {
     
 ## Installation
 
-## Usage`;
+## Usage
+`;
   };
 };
 
@@ -73,9 +87,12 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-For more information, please refer to <http://unlicense.org/>`;
+For more information, please refer to <http://unlicense.org/>
+`;
   } else if (license === 'MIT License') {
     return `
+## License
+
 MIT License
 
 Copyright (c) ${d.getFullYear()} ${name}
@@ -96,9 +113,12 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.`;
+SOFTWARE.
+`;
   } else if (license === 'Apache License') {
     return `
+## License
+
 Copyright ${d.getFullYear()} ${name}
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -111,9 +131,12 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.`;
+limitations under the License.
+`;
   } else if (license === 'GNU GPL License') {
     return `
+## License
+
 Copyright (C) ${d.getFullYear()} ${name}
 
 This program is free software: you can redistribute it and/or modify
@@ -127,7 +150,8 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.`;
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+`;
   };
 };
 
@@ -148,7 +172,7 @@ For further questions and comments, please reach out through [GitHub](${github})
 // Assemble
 function generateMarkdown(data) {
   // Render title
-  const title = renderTitle(data.title, data.github, data.repo);
+  const title = renderTitle(data.title, data.github, data.repo, data.license);
   // Render table of contents
   const toc = renderTOC(data.credit);
   // Render license
