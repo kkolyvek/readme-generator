@@ -1,18 +1,12 @@
 // ---------------------
 // INIT GLOBAL VARIABLES
 // ---------------------
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [
-    // USER INPUTS INCLUDE:
-    // - project title
-    // - Github username
-    // - email
-    // - credits given
-    // - license choice
     {
         type: 'input',
         message: 'Enter your full name:',
@@ -61,14 +55,14 @@ const questions = [
 // ---------
 // FUNCTIONS
 // ---------
-// TODO: Create a function to write README file
+// Create a function to write README file
 const writeToFile = (fileName, data) => {
     fs.writeFile(fileName, data, (err) => {
         err ? console.log(err) : console.log('Success! ReadMe file created.');
     });
 };
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 const init = () => {
     inquirer
         .prompt(questions)

@@ -4,18 +4,34 @@
 
 ## Description
 
+This tool is a JavaScript command line application that creates a readme markdown file based on some user input.
+
+> ![Demo](./assets/images/readme-generator-demo.gif)
+
 ## Table of Contents
 
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [License](#license)
 4. [Contributing](#contributing)
-5. [Tests](#tests)
-6. [Questions](#questions)
+5. [Questions](#questions)
 
 ## Installation
 
+This application uses [Node.js](https://nodejs.org/en/) and [NPM](https://www.npmjs.com/) - both are required.
+
 ## Usage
+
+This readme generator is a simple command line program. Once installed and ran, the user will be prompted for several details:
+
+- Full Name
+- Project Title
+- GitHub Username
+- Email Address
+- Whether to Include a 'Credit Given' Section
+- Four Options for Open Source Software Licenses
+
+Upon completion of the prompts, a `readme.md` file will be created in the working directory with a basic skeletal structure. The user must then fil each section out with actual content.
 
 ## License
 
@@ -45,11 +61,11 @@ SOFTWARE.
 
 ## Contributing
 
-## Tests
+Please feel free to fork this repository if you wish to make any personal changes or build on top of what's already written.
 
 ## Questions
 
-For further questions and comments, please reach out through [GitHub](https://github.com/kkolyvek) or via email at kk674@cornell.edu.
+For further questions and comments (or bug reports), please reach out through [GitHub](https://github.com/kkolyvek) or via email at kk674@cornell.edu.
 
 ---
 
