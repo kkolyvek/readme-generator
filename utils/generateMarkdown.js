@@ -16,7 +16,10 @@ const renderTitle = (title, github, repo, license) => {
   return `
 <h1 align="center"><strong>${title}</strong></h1>
 
-![Language](https://img.shields.io/github/languages/top/${github}/${repo}) ${badge}
+<p align="center">
+  <img src="https://img.shields.io/github/languages/top/${github}/${repo}">
+  <img src="${badge}">
+</p>
 
 ## Description
 `;

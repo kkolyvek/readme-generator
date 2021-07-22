@@ -75,7 +75,7 @@ const init = () => {
             const md = generateMarkdown(response);
 
             // all done, create file
-            writeToFile('readme.md', md);
+            writeToFile('template.md', md);
         });
 };
 
