@@ -4,13 +4,13 @@ d = new Date();
 const renderTitle = (title, github, repo, license) => {
   let badge = '';
   if (license === 'Unlicensed') {
-    badge = '![License](https://img.shields.io/badge/License-Unlicensed-blue.svg)';
+    badge = 'https://img.shields.io/badge/License-Unlicensed-blue.svg';
   } else if (license === 'MIT License') {
-    badge = '![License](https://img.shields.io/badge/License-MIT-blue.svg)';
+    badge = 'https://img.shields.io/badge/License-MIT-blue.svg';
   } else if (license === 'Apache License') {
-    badge = '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)';
+    badge = 'https://img.shields.io/badge/License-Apache%202.0-blue.svg';
   } else if (license === 'GNU GPL License') {
-    badge = '![License](https://img.shields.io/badge/License-GPL-blue.svg)';
+    badge = 'https://img.shields.io/badge/License-GPL-blue.svg';
   };
 
   return `
